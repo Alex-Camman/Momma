@@ -138,3 +138,4 @@ h1 {
 #confettiBtn:hover {
   background-color: #FF3333; /* Darker red on hover */
 }
+
