@@ -1,42 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family-Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-  font-family: 'Indie Flower', cursive !important; background: #FDE3A7; /*CAPE HONEY*/ margin: 0px; padding: 0px;
-}
-
-:: selection {
-  background: transparent;
+  font-family: 'Indie Flower', cursive;
+  background: #FDE3A7; /*CAPE HONEY*/
+  margin: 0;
+  padding: 0;
 }
 
 h4 {
   font-size: 26px;
   line-height: 1px;
-  font-family: 'Amatic SC', cursive !important;
+  font-family: 'Amatic SC', cursive;
 }
 
-.color1{color:#1BBC9B} /*MOUNTAIN MEADOW*/
-.color2{color:#C0392B/*TALL POPPY*/}
+.color1 {
+  color: #1BBC9B; /*MOUNTAIN MEADOW*/
+}
+
+.color2 {
+  color: #C0392B; /*TALL POPPY*/
+}
+
+.margin {
+  margin-top: 5px;
+}
 
 .card {
   color: #013243; /*SHERPA BLUE*/
-  position: absolute; 
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 300px;
   height: 400px;
   background: #e0e1dc;
-  transform-style: preserve-3d; 
-  transform: translate(-50%,-50%)
-perspective (2000px);
- box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
- transition: 1s;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+  transition: 1s;
 }
 
 .card:hover {
-  transform: translate(-50%, -50%)
-    perspective(2000px) rotate(15deg) scale(1.2);
-  box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+  transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
 }
 
 .card:before {
@@ -51,18 +57,17 @@ perspective (2000px);
   transform: skewX(-45deg);
 }
 
-.card : after {
+.card:after {
   content: '';
   position: absolute;
   top: 0;
   right: -5px;
   width: 5px;
   height: 100%;
-  background: #92A29C; 
+  background: #92A29C;
   transform-origin: left;
   transform: skewY(-45deg);
 }
-
 
 .card .imgBox {
   width: 100%;
@@ -82,7 +87,7 @@ perspective (2000px);
 }
 
 .card .imgBox img {
-  min-width: 250px; 
+  min-width: 250px;
   max-height: 400px;
 }
 
@@ -93,9 +98,7 @@ perspective (2000px);
 .card:hover .bark {
   opacity: 1;
   transition: .6s;
-  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4)
-
-inset;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
 .card .details {
@@ -121,4 +124,42 @@ inset;
 
 .text-right {
   text-align: right;
+}
+
+/* Confetti animation */
+.confetti {
+  width: 10px;
+  height: 10px;
+  background-color: #f00; /* Adjust color as needed */
+  position: absolute;
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: fall 5s ease forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotateZ(720deg);
+  }
+}
+
+#confettiBtn {
+  margin-top: 20px;
+  display: block;
+  width: 120px;
+  padding: 10px;
+  background-color: #1BBC9B; /*MOUNTAIN MEADOW*/
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#confettiBtn:hover {
+  background-color: #16A085; /*NEPHRITIS*/
 }
